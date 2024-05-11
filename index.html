@@ -11,6 +11,16 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="
+https://cdn.jsdelivr.net/npm/@chakra-ui/react@2.8.2/dist/index.min.js
+"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -30,15 +40,23 @@
 
     <section class="home" id="home">
       <div class="home-img">
-        <img src="/assets/images/blob.svg" alt="" />
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="#6c35de"
+            d="M66.1,-22.4C74.9,5.4,63.6,38.8,40.7,55.3C17.8,71.8,-16.9,71.4,-39.6,54.9C-62.2,38.3,-72.8,5.6,-64.2,-22C-55.6,-49.7,-27.8,-72.2,0.4,-72.3C28.7,-72.5,57.4,-50.2,66.1,-22.4Z"
+            transform="translate(100 100)"
+          />
+        </svg>
       </div>
       <div class="home-text">
         <span>Hello, I'm</span>
         <h1>Abhinav Palugula</h1>
-        <h2>MERN Stack Developer</h2>
+        <h2>Full Stack Web Developer</h2>
         <p style="width: 80%; font-size: 0.8rem">
-          Experienced MERN Stack Developer with expertise in UI/UX design using
-          Figma, currently exploring Machine Learning
+          Experienced in developing with the MERN Stack, specializing in
+          MongoDB, Node.js, Express, and React, with additional proficiency in
+          UI/UX design using Figma. Currently venturing into the realms of
+          Machine Learning.
         </p>
         <a href="#contact" class="btn">Contact Me</a>
         <div class="social">
@@ -61,34 +79,32 @@
       <!-- About Content -->
       <div class="about-container">
         <div class="about-img">
-          <img src="img/about.jpg" alt="" />
+          <img src="assets/images/about.img" alt="" />
         </div>
         <div class="about-text">
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis
-            beatae eius quae ab consequatur est perferendis dicta. Ad
-            repellendus perferendis minus sunt error eos dicta enim accusantium
-            ipsum veniam debitis quasi sint cum fugiat porro quam, blanditiis a
-            ratione quod!
+            I'm a 14-year-old proficient in MERN Stack development and skilled
+            in crafting polished websites using Figma. Currently, I'm exploring
+            Artificial Intelligence, specifically Machine Learning. I'm
+            passionate about technology and committed to expanding my knowledge
+            to make a positive impact in the tech industry.
           </p>
-          <div class="information">
-            <!-- Box 1 -->
-            <div class="info-box">
-              <i class="bx bxs-user"></i>
-              <span>Tasnia Farin</span>
+          <section class="services" id="services">
+            <div class="services-content">
+              <!-- Box 1 -->
+              <div class="services-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Frontend<br />Development</h3>
+              </div>
+              <!-- Box 2 -->
+              <div class="services-box">
+                <i class="bx bx-server"></i>
+                <h3>Backend <br />Development</h3>
+              </div>
+              <!-- Box 3 -->
             </div>
-            <!-- Box 2 -->
-            <div class="info-box">
-              <i class="bx bxs-phone"></i>
-              <span>+1 444 444 4444</span>
-            </div>
-            <!-- Box 3 -->
-            <div class="info-box">
-              <i class="bx bxs-envelope"></i>
-              <span>project@farin.com</span>
-            </div>
-          </div>
-          <a href="#" class="btn">Download Cv</a>
+          </section>
+          <a href="#" class="btn" id="Download-CV">Download Cv</a>
         </div>
       </div>
     </section>
@@ -96,96 +112,179 @@
     <section class="skills" id="skills">
       <div class="heading">
         <h2>Skills</h2>
-        <span>My Skills</span>
       </div>
-      <!-- Skills Content -->
-      <div class="skills-container">
-        <div class="bars">
-          <!-- Box 1 -->
-          <div class="bars-box">
-            <h3>HTML</h3>
-            <span>94%</span>
-            <div class="light-bar"></div>
-            <div class="percent-bar html-bar"></div>
+      <div class="skills-content">
+        <div>
+          <div class="skill-group" id="frontend">
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=js" alt="" disabled />
+              <span class="skillName">JavaScript</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=html" alt="" disabled />
+              <span class="skillName">HTML</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=css" alt="" disabled />
+              <span class="skillName">CSS</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=bootstrap"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Bootstrap</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=react" alt="" disabled />
+              <span class="skillName">React</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=jquery"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Jquery</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=figma" alt="" disabled />
+              <span class="skillName">figma</span>
+            </div>
+
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=nodejs"
+                alt=""
+                disabled
+              />
+              <span class="skillName">NodeJs</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=express"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Express</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=mongodb"
+                alt=""
+                disabled
+              />
+              <span class="skillName">MongoDB</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=mysql" alt="" disabled />
+              <span class="skillName">MySQL</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=git" alt="" disabled />
+              <span class="skillName">Git</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=postman"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Postman</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=python"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Python</span>
+            </div>
+            <div class="skill">
+              <img src="https://skillicons.dev/icons?i=c" alt="" disabled />
+              <span class="skillName">C Language</span>
+            </div>
+            <div class="skill">
+              <img
+                src="https://skillicons.dev/icons?i=docker"
+                alt=""
+                disabled
+              />
+              <span class="skillName">Docker</span>
+            </div>
           </div>
-          <!-- Box 2 -->
-          <div class="bars-box">
-            <h3>CSS</h3>
-            <span>84%</span>
-            <div class="light-bar"></div>
-            <div class="percent-bar css-bar"></div>
-          </div>
-          <!-- Box 3 -->
-          <div class="bars-box">
-            <h3>JavaScript</h3>
-            <span>74%</span>
-            <div class="light-bar"></div>
-            <div class="percent-bar js-bar"></div>
-          </div>
-          <!-- Box 4 -->
-          <div class="bars-box">
-            <h3>React</h3>
-            <span>80%</span>
-            <div class="light-bar"></div>
-            <div class="percent-bar react-bar"></div>
-          </div>
-        </div>
-        <div class="skills-img">
-          <img src="img/skills.png" alt="" />
         </div>
       </div>
     </section>
     <!-- Services -->
-    <section class="services" id="services">
-      <div class="heading">
-        <h2>Services</h2>
-        <span>Our Services</span>
-      </div>
-      <div class="services-content">
-        <!-- Box 1 -->
-        <div class="services-box">
-          <i class="bx bx-code-alt"></i>
-          <h3>Web <br />Development</h3>
-          <a href="#">Learn More</a>
-        </div>
-        <!-- Box 2 -->
-        <div class="services-box">
-          <i class="bx bx-server"></i>
-          <h3>Backend <br />Development</h3>
-          <a href="#">Learn More</a>
-        </div>
-        <!-- Box 3 -->
-        <div class="services-box">
-          <i class="bx bx-brush"></i>
-          <h3>UI/UX <br />Design</h3>
-          <a href="#">Learn More</a>
-        </div>
-      </div>
-    </section>
+
     <!-- Portfolio -->
-    <section class="portfolio" id="portfolio">
-      <div class="heading">
-        <h2>Portfolio</h2>
-        <span>Our Recent Work</span>
-      </div>
-      <div class="portfolio-content">
-        <div class="portfolio-img">
-          <img src="img/p1.jpg" alt="" />
+    <section id="projects">
+      <h1 style="text-align: center">Projects</h1>
+      <p style="text-align: center">
+        All Creative Works. Here's some of my projects that I have worked on.
+      </p>
+      <div class="projectsList">
+        <div class="project">
+          <img
+            src="./assets/images/project-pictures/project1.png"
+            alt=""
+            class="projectImg"
+          />
+          <div class="project-info">
+            <div>
+              <h2 class="projectName">Student Management Application</h2>
+              <a href="https://busy-red-pigeon-veil.cyclic.app/">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div class="tectStack"></div>
+            <p class="about-project">
+              student management application with robust features for adding,
+              removing, updating, and searching student data.
+            </p>
+          </div>
         </div>
-        <div class="portfolio-img">
-          <img src="img/p2.jpg" alt="" />
+        <div class="project">
+          <img
+            src="./assets/images/project-pictures/project2.png"
+            alt=""
+            class="projectImg"
+          />
+          <div class="project-info">
+            <div>
+              <h2 class="projectName">Dictionary Application</h2>
+              <a href="https://dictionary-plxd.onrender.com/">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div class="tectStack"></div>
+            <p class="about-project">
+              student management application with robust features for adding,
+              removing, updating, and searching student data.
+            </p>
+          </div>
         </div>
-        <div class="portfolio-img">
-          <img src="img/p3.jpg" alt="" />
-        </div>
-        <div class="portfolio-img">
-          <img src="img/p4.jpg" alt="" />
-        </div>
-        <div class="portfolio-img">
-          <img src="img/p5.jpg" alt="" />
-        </div>
-        <div class="portfolio-img">
-          <img src="img/p6.jpg" alt="" />
+        <div class="project">
+          <img
+            src="./assets/images/project-pictures/project3.png"
+            alt=""
+            class="projectImg"
+          />
+          <div class="project-info">
+            <div>
+              <h2 class="projectName">MovieMosaic</h2>
+              <a href="https://busy-red-pigeon-veil.cyclic.app/">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+            <div class="tectStack"></div>
+            <p class="about-project">
+              student management application with robust features for adding,
+              removing, updating, and searching student data.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -225,7 +324,11 @@
     </div>
 
     <!-- Link To JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
     <script src="./script.js"></script>
   </body>
 </html>
-

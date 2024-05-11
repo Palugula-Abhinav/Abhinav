@@ -1,40 +1,58 @@
-window.addEventListener("scroll", function () {
-  var navbar = document.getElementById("navbar");
-  var scrollThreshold = 40; // Adjust this value to set the scroll threshold
+var TxtType = function (el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = "";
+  this.tick();
+  this.isDeleting = false;
+};
 
-  if (window.scrollY > scrollThreshold) {
-    navbar.classList.add("shadow");
+TxtType.prototype.tick = function () {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
   } else {
-    navbar.classList.remove("shadow");
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
-});
 
-// Sticky Navbar
-let header = document.querySelector("header");
-let menu = document.querySelector("#menu-icon");
-let navbar = document.querySelector(".navbar");
+  this.el.innerHTML = '<span class="wrap">' + this.txt + "</span>";
 
-window.addEventListener("scroll", () => {
-  header.classList.toggle("shadow", window.scrollY > 0);
-});
+  var that = this;
+  var delta = 200 - Math.random() * 100;
 
-menu.onclick = () => {
-  navbar.classList.toggle("active");
-};
-window.onscroll = () => {
-  navbar.classList.remove("active");
-};
-
-// Dark Mode
-let darkmode = document.querySelector("#darkmode");
-
-darkmode.onclick = () => {
-  if (darkmode.classList.contains("bx-moon")) {
-    darkmode.classList.replace("bx-moon", "bx-sun");
-    document.body.classList.add("active");
-  } else {
-    darkmode.classList.replace("bx-sun", "bx-moon");
-    document.body.classList.remove("active");
+  if (this.isDeleting) {
+    delta /= 2;
   }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === "") {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function () {
+    that.tick();
+  }, delta);
 };
 
+window.onload = function () {
+  var elements = document.getElementsByClassName("typewrite");
+  for (var i = 0; i < elements.length; i++) {
+    var toRotate = elements[i].getAttribute("data-type");
+    var period = elements[i].getAttribute("data-period");
+    if (toRotate) {
+      new TxtType(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+  document.body.appendChild(css);
+};
